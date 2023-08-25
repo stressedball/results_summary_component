@@ -16,7 +16,7 @@
 
 @font-face {
     font-family: "Haken bold extra";
-    src: url('/assets/fonts/static/HankenGrotesk-ExtraBold.ttf');
+    src: url("/assets/fonts/static/HankenGrotesk-ExtraBold.ttf");
 }
 
 * {
@@ -34,41 +34,48 @@ body {
 
 .wrapper {
     display: flex;
-    border: 1px solid;
+    flex-wrap: wrap;
     border-radius: 1.4rem;
     align-items: stretch;
     margin: auto;
+    box-shadow: 1px 1px 4px 1px hsl(221, 100%, 96%);
 }
 
 .result,
 .summary {
     flex: 1;
-    padding: 2rem 2rem;
-    /* max-width: 300px; */
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    width: 250px;
 }
 
 .result {
-    /* background: linear-gradient(#7857ff, #2e2be9); */
     background: rgb(46, 43, 233);
-    background: linear-gradient(53deg, rgba(46, 43, 233, 1) 21%, rgba(120, 87, 255, 1) 97%);
+    background: linear-gradient(
+        53deg,
+        rgba(46, 43, 233, 1) 21%,
+        rgba(120, 87, 255, 1) 97%
+    );
     border-radius: 1.4rem;
     text-align: center;
 }
 
-.result>p:nth-of-type(1) {
+.result > p:nth-of-type(1) {
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--white);
 }
 
-.result>p:nth-of-type(2),
+.result > p:nth-of-type(2),
 .result h3,
-.score+p {
+.score + p {
     color: hsl(0, 0%, 100%, 0.7);
 }
 
-.result>p:nth-of-type(2) {
+.result > p:nth-of-type(2) {
     margin-top: auto;
+    padding: 0 12px;
 }
 
 .summary {
@@ -82,6 +89,7 @@ body {
 
 .circle {
     background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
+    /* background-color: hsl(241, 81%, 54%); */
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -99,7 +107,7 @@ body {
 }
 
 .tile,
-.tile>div {
+.tile > div {
     display: flex;
     align-items: center;
 }
@@ -131,12 +139,12 @@ body {
     background-color: hsl(234, 85%, 45%, 0.1);
 }
 
-.tile>p {
+.tile > p {
     color: hsl(224, 30%, 27%);
     font-weight: bold;
 }
 
-p>span {
+p > span {
     color: var(--subtle-grey);
     font-weight: bold;
 }
@@ -159,4 +167,28 @@ button {
 
 h3 {
     padding-bottom: 24px;
+}
+
+footer {
+    text-align: center;
+}
+
+@media screen and (max-width: 550px) {
+    .wrapper {
+        flex-direction: column;
+        box-shadow: none;
+    }
+
+    .wrapper,
+    .result {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+}
+
+@media screen and (max-width: 340px) {
+    .result,
+    .summary {
+        width: unset;
+    }
 }
