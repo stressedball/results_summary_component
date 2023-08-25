@@ -51,20 +51,19 @@ body {
 }
 
 .result {
-    background: rgb(46, 43, 233);
     background: linear-gradient(
-        53deg,
-        rgba(46, 43, 233, 1) 21%,
-        rgba(120, 87, 255, 1) 97%
+        rgba(120, 87, 255, 1),
+        rgba(46, 43, 233, 1) 
     );
     border-radius: 1.4rem;
     text-align: center;
 }
 
 .result > p:nth-of-type(1) {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: var(--white);
+    line-height: 24px;
 }
 
 .result > p:nth-of-type(2),
@@ -88,8 +87,10 @@ body {
 }
 
 .circle {
-    background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
-    /* background-color: hsl(241, 81%, 54%); */
+    background: linear-gradient(
+        hsla(256, 72%, 46%, 1),
+        hsla(241, 72%, 46%, 0.01)
+    );
     border-radius: 50%;
     display: flex;
     flex-direction: column;
@@ -98,6 +99,7 @@ body {
     height: 10rem;
     width: 10rem;
     margin: 1rem auto;
+    position: relative;
 }
 
 .score {
@@ -163,6 +165,11 @@ button {
     border: none;
     font-weight: bold;
     margin-top: 24px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
 }
 
 h3 {
@@ -171,6 +178,8 @@ h3 {
 
 footer {
     text-align: center;
+    padding: 2px;
+    font-size: 12px;
 }
 
 @media screen and (max-width: 550px) {
