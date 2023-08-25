@@ -193,11 +193,18 @@ footer {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
     }
-}
-
-@media screen and (max-width: 340px) {
+    
     .result,
     .summary {
         width: unset;
     }
+
+    .result > p:nth-of-type(2) {
+        /* got this one from the devtools computed */
+        padding-top: 26px; 
+    }
+}
+
+@media screen and (max-width: 340px) {
+
 }
